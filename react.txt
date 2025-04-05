@@ -1,0 +1,402 @@
+
+                                          react - advanced frontend application library
+            ---------------------------------------------------------------------------------------------      
+
+            
+        
+        1. react oru front end technology ahnn
+
+        2. react different libraries inte oru collection ahnn
+
+        3.react app consist cheyyunne components kond ahnn (components use cheyyunne data ine browser il display cheyyikkan ahnn)
+        
+        4.components oru tree structure ayitt ahnn arrange cheyythirikkunne
+
+        5.tree structure inn oru 'single parent' alle oru 'root node' ondarikkum athine nmml "APP component" ennu parayum
+
+        6.components re-useable ahnn (nmmk athine avide venamaelum use cheyam)
+
+        7.components build cheyyan nmmml use cheyyunne 'pure JS functions' ahnn (otta taske ae ithh cheyyathollu)(ithin side effects illa)
+
+        8.oru function il bakki verunna taske inne nmml "side effects" ennu parayum
+
+        9. virtual DOM : evide change verunno avide mathramm re-render cheyyikkan olla kazhivu virtual dom inn ond
+
+        10. react ezhuthann use cheyyunna language (JSX) ahnn "javascript xml"
+            
+                        react rules
+                  -------------------------
+            oru single tag inte agathh arikkum jsx elements ezhuthukka (containor tags,react fragment{<> </> "tag without name"})
+
+            ella elements inum oru starting tag um closing tag um venam  (<starting tag> </closing tag> " self closing tag {<starting/>} " )
+
+            ivide class innu pakaram "className" ahnn use cheyyunne 
+
+            ivide for innu pakaram "htmlFor" ahn use cheyyunne
+
+            ivide elements camelCase ill ahnn ezhuthunne     eg:  tagName   onClick
+
+            jsx il nmmk direct js code ine pass cheyyam , js code oru curle bracess inte agathh arikkanam  {js code}
+
+
+                   react app creation
+            ----------------------------------
+
+            nmmk rand tharathill app inne create cheyyam
+
+            1. CRA : using create-react-app command ( ith use cheyythh arunnu nmml app ine ondakkikondd irunnathh )
+
+            2. vite : web applications build cheyyan olla oru tool ahnn ithhh
+
+            vite use cheyyan nmml athine athyam globally install cheyyanm : 
+                               
+                             npm i -g create-vite 
+
+            
+
+                  js modules 
+             -------------------------------
+            
+            ith use cheyyunne oru file inn matt oru file il ott data transfer cheyyan ahnn
+
+            export statment : 2 types 
+                  
+                  export default : code inte last il arikkum ith ezhuthunne
+                  export keyword : oru file inn multiple data transfer cheyyan ahnn ith use cheyyunne
+                    
+            import statment : 
+
+                   import statment with curle bracess : export keyword use cheyyth olla transfer inn ahn ith use cheyyunne
+                   
+                   import statment without curle bracess : export default use cheyyth olla transfer inn ahn ith use cheyyunne
+
+
+                   components
+          -------------------------------
+
+          interface inte oru part ahnn
+
+          contentine display cheyyikkan ahn use cheyyunne
+
+          oru component create cheyyan , oru js/jsx file create cheyyanm , filename inte first letter capital letter arikkanam
+            eg : Filename.jsx
+
+              components nammk rand tarathil create cheyyam :
+
+                               1. function based component
+                                          
+                                   pure javascript function ahnn ith use cheyyunne components ine create cheyyan
+
+                                   component inte filename um function name um same arikkanam
+
+                              2. class based command 
+
+            
+            data sharing between react component  (components thammil engane data share cheyum)
+      -------------------------------------------------------------------------------------------
+       
+       parent inn child il ott matharame data share cheyyan pattu (" props " ennu parayunna oru property use cheyyth ahnn ith nadathunne)
+
+                        props
+            -------------------------------
+
+             component inte oru property ahnn  ( actually ath oru object ahnn)
+
+             parent component inn child ilotta data share cheyyan ahnn ith use cheyyunne
+
+             ith use cheyyandathh  child component inte function ile argument il ahnn
+     
+
+      conditional rendering:
+                               1. if-else statments (ternary operator ?:)
+
+                               2. if statments (truthy operator &&)      
+
+
+      css styling in react:
+                          
+                           inline css : ivide style attribute ahnn use cheyyande , double curle bracess {{}} um kodukkanam , oru key:value pair ayitt ahnn ezhuthandae
+
+                           external css : ith css file il arikkum style cheyyunne, ennit athine import cheyyanm
+                              
+                              import './css filename'
+
+       
+       event handling in react :
+                                  ivide rand tharathill olla function ahnn ollath
+
+                                  1. arguments olla function (syntax :  event = {()=>functionName()})
+
+                                  2. argument illate function (syntax : event = {functionName})
+      
+
+      state in react :     (variables re-render cheyythilla athukond ahnn nmml state use cheyythe)
+
+                        component ile data ine store cheyyan ahn ith use cheyyunne
+
+                        state inte value change akumbo component inte value um change akum  (re-render cheyyum)
+
+                                    
+                                         How to create state 
+                                 -------------------------------------               
+
+            state create cheyyan class components alle statefull components ahnn  use cheyyunne            
+            
+            class based components : 
+                                       class ahnn components ine create cheyyan use cheyyunne
+
+                                       shortcut to create call based component use ( rcc )
+                                        
+
+             hooks in react : predefined methods in react, ath ahnn hooks
+
+                             ith react component class inn  ullil olla ella features inem function based components inn kodukkum
+
+                             function based components il hook use cheyyanm enn onde , hook ine avide call cheythirikkanm
+
+            rules to call hooks in function based component : 
+
+                                      function based componentil hook ine import cheyyanm
+
+                                      hook use cheyyan athine component inte top il call cheyyanm
+
+                                      hook oru conditional statment aakan padilla
+            
+            different types of hooks :
+                                
+                                  useState( initial value) :
+                   -------------------------------------------------------
+                                  
+                              state create cheyyan ahn ith use cheyyunne
+
+                              ith return cheyythu tarunne rand arguments olla oru array ahnn
+                                   
+                               [statename , function to update state ]
+
+                              eg. [ username,setUserName] " state name tanne ahnn set kazhinjj function nu kodukkanda name"
+                           
+             
+                     useEffect(callbackfunction, dependency)
+            -------------------------------------------------------------
+                  
+                     side effects ine exicute cheyyan ahnn useEffect use cheyyunne
+
+                     initiali nadakkanda karyangal kodukkunna aal ahnn useEffect (initiali endhelum action nadakkanm ennu onde ath ivide ezhuthanm)
+
+                     side effects oru callbackfunction pole kodukkanam
+
+                     componentil epo side effects apply akanam ennu  ezhuthi kodukkunnath dependency il ahnn
+               
+
+                 different dependency vlaues
+            ---------------------------------------
+                     no value : initiali endhh ahno kanunne ath last vare kaanum , changes onnum ondavathilla
+
+                     empty array [] : initialii olla oru working mathrame ollu , pnne change onnum ondavathilla
+
+                     [state/props/variables] : eppol okke dependency ile value change akunno .apo okke side effects avide apply ayikkondae irikkum
+
+               
+                       useRef(initial value)
+            ---------------------------------------
+               rendering avisham illate vlaues ine kondu kodukkan ahnn useRef use cheyyunne
+
+               rendering avisham illatha oru karyathine/value ine use cheyyunne ahnn useRef 
+
+               useRef initial value optional ahnn
+
+               useRef return cheyyth tarunne oru object arikkum, 'current' ennu parayunna oru key mathrame athil ollu 
+
+               'current' ennu parayunna key vechitt ahnn nmml value ine access cheyyunne
+
+                useRef nmmk oru html element ine access cheyyanum koode use cheyyam
+    
+    
+                         custom hooks : 
+            -------------------------------------------         
+                   
+
+                   oru js file create cheyyth oru task cheyyan athin oru function define cheyyuka  
+
+                   predefined hook alla ith
+
+                   functionae export cheyyanam
+
+                   function nte name start cheyyande "use" keyword vechitt ahnn
+
+
+                   form handling in react
+        ---------------------------------------------------
+
+               component vechitt form inn ullil ae data ine nmmk 2 reethiyil handle cheyyam
+
+               1. controlled components : form inn ullil ae data ine athinte athanne state il store cheyyth vekkunna component ahnn controlled components
+
+               2.uncontrolled components : DOM elements referance vechitt form inn ullil ae data ine access cheyyunna component ahnn uncontrolled components
+
+
+               match method in string
+          ----------------------------------
+
+                     match method use cheyyunne oru string inem regular expressionem koode match/compair cheyyan ahnn
+
+              
+            regular expression
+       ---------------------------------
+
+              characters inte oru  patterne ahnn regular expression ennu parayunne
+
+              oru string inn ullile character ine search cheyyan oru pattern form cheyyunnathinn ahnn regular expression ennu parayunne 
+
+              syntax : /^\d+(\. \d+)?$/   regular expression for desimal numbers
+
+              !! koduth kazhinja nmmk athine true/false akki mattam
+
+    event.preventDefault : unwanted data ine prevent cheyyann ahnn it use cheyyunne
+
+    disabled : oru html tag ine disable cheyyan ahn it use cheyyunne
+
+    name : oru attribute ahnn identify cheyyan ah it use cheyyunne
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+                       create crade application with react (api call)
+                       
+                                    react with api project steps
+                            ---------------------------------------------
+
+            1. vite use cheyyth oru project create cheyyuva
+
+            2. remove unwanted code from app.css,app.jsx,index.html etc.
+
+            3. react-bootstrap install cheyyanm styling cheyyan
+
+            4. athin oru theme kodukkanam bootstrap properly apply cheyyan 
+            
+            5. bootswatch website for react-bootstrap theme
+
+            6. bootstrap.min.css download cheyyanam project src il ott
+
+            7. import cheyyanm bootstrap.min.css ine main.jsx il ott
+
+            8. oru folder create cheyyanm src folder il. different pages inu vendiiii
+
+            9. react-router-dom vechitt components inn oru path set cheyyanm
+
+           10. common ayitt olla ella components inem nmml oru folder create cheyyth athil ahn vekkunne
+                   
+
+
+
+                    set up path/URI for component in react  
+                      ------------------------------
+            nmml component inn oru path set cheyyunne react-router-dom ennu parayyunna oru third party vechitt ahnnn                              
+
+            install react-router-dom from website : npm i react-rounter-dom 
+
+                     steps for set up path/url for component in react
+                       -------------------------------------------
+
+               1. entire react app ine nmml "browserRouter" component of react-router-dom ullil idanm. in main.jsx    
+               2."routes" ennu parayunna react-router-dom component inte ullil ahnn path vendiyaaa ella component um kond kodukkandathh.in app.jsx                    
+               3. "route" ennu parayunna react-router-dom component inn rand attribute ond [path and element] 
+               4. route ennu parayunna component routes ennu parayunna component inte ullil ahnn kodukkande
+                                     
+                                     eg. <routes>
+                                           
+                                           <route path = "/" element={<landing/>}/>
+                                          
+                                          </routes>
+                             
+                  higher order components (hoc)
+              ----------------------------------------
+                   oru component inte ullil mattu oru component use cheyyunnathinn ahnn higher order component ennu parayunne
+                                       
+                                       eg: route
+
+                link : react rounter dom tag ahnn.ith use cheyyunne oru page il ninnum matt oru page il ott re-direct cheyyann ahnn
+
+                ?autoplay=1 : automatically oru video play cheyyan athinte scr il ith kodutha mathi
+
+                centered : ith modal inte oru attribute ahnn oru modal ine screen inte center akkan
+
+                row and col : attribute of react-bootstrap ivide col inte ullil sm,md,lg style kodukkam eg. sm={12} md={6} lg={4}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+                                             JSON server creation (json use cheyyth oru server create cheyyunnu)
+                          -------------------------------------------------------------
+
+json oru data type ahnn
+api's thammil olla communication nu vendi olla oru data type ahnn
+
+     steps.  
+                   1. json files ine store cheyyan oru server folder create cheyyanm
+                   2. server folder inte ullil package.json file/npm configuration file create cheyyanm .
+                      use cheyyanda command " npm init -y "  [ code . ] re-direct to vs code in cmd using this
+                   3. json file run cheyyikkan vendi server folder il ott JSON server package install cheyyanm
+                      use cheyyunna command " npm i json-server "
+                   4. project innu verunna data ine store cheyythu vekkan vendi oru json file create cheyyanm 
+                      json file inte name kodukkandath (db.json) enn ahnn vare koduthuu ennu vechh tett onnum illa 
+                   5. create cheyytha json file ine browser run cheyyikkann vendi oru command ond
+                           " npx json-server db.json "   
+       
+
+               api call in react
+       --------------------------------------
+
+         1. using Axios library : use "  npm install axios " in cmd to install axios in project " npm i axios " is also correct
+         2. axios use cheyyth olla http request nadathann orupad ways ond athil nmml use cheyyunne axios(config) ahnn
+              config oru predefined object ahnn athil kore key um ondd {method , url , data , header} extra olla data ahnn header il verunne
+         3. axios use cheyyth olla http responce return cheyyunnath oru predefined object ahnn with keys
+              { data(responce ivide ahnn kittunnath) ,  status }  two keys
+
+         4. scr il services ennu parayunna oru folder create cheyyanm
+         
+
+             data sharing between components in react
+          ---------------------------------------------- 
+         
+         statelifting : data share cheyunne props vechitt ahnn oru comman parate il ott state create cheyyum. ennit state function oru component il kodukkum, state matt oru component ilum kodukkum athine ahnn statelifting ennu parayunne
+
+                        Drag and drop an element
+               ---------------------------------------------
+
+            1. njn eth element ine ahno drag cheyyan udeshikknne. avide element inte draggable ennu parayunna oru property ond athinte value boolen akkivekkanm (true akki vekkanm athine) eg. <div draggable={true}> hello world </div>
+
+            2. "onDragStart" ennu parayunna oru event ond . ella drag and drop inum ith ahnn use cheyyunne.
+                ithinte function nte argument ayit event um venam datayum venam , rand arguments venam.
+                event : ee event drag ahnn system thin mansil ayal mathrame ithinte data ine share cheyyan pattathollu (data transfer cheyyan vendi ahnn event use cheyyunne)
+                data : drop cheyyunnadathott ee data kittunnu
+
+                        eg. onDragStart={event=>videoCardDragStarted(event,data)}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------               
+                                                  REDUX - STATE MANAGEMENT TOOL (js library)
+          -----------------------------------------------------------------------------------------------------------------
+
+          props drilling ozhuvakkan vendi ahnn redux use cheyyunne
+          
+          share cheyyanda data mothom irikkunne store il arikkum
+
+          state create cheyyunne store il arikkum ( ee state ine nammk full project il access cheyyam ella component inum direct access ond store il ottu )
+
+          state irikkunne store inte ullile reducer inte ullil arikkum
+
+          redux ine react il ott kondu veran nmml rand packages install cheyyanm
+                   - react-redux : react features ine redux ilott kodukkan/konduveran vendi ahn ith use cheyyunne
+                           provider element : store ine react componentil ottu konduveran use cheyyunna aal ahn ith
+                           useSelector : store inte ullile state ine componentil ottu kodukkan vendi use cheyyunna hook ahn ith 
+                           useDispatch : store inte ullile action/logic ine componentil ottu kodukkan vendi use cheyyunna hook ahn ith
+                           
+                   - redux-toolkit : redux inte bakki olla ella karyavum manage cheyyunna aal ahnn ith
+                             redux-toolkit inte ullil arikkum engane store create cheyyanm ennu ezhuthi kodukkunne
+                                   - store create cheyyan olla API: configurestore()
+                                   - reducers : update aya state ine hold cheyyunna aal ahn ith
+                                   - action : state update cheyyan olla logic ivide ahn kodukkunne, updated aya state automatically reducers il 
+                                              ottu pokum
+                                   
+
+                                      steps for create redux store in react
+                              -------------------------------------------------------
+     
