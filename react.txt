@@ -397,6 +397,14 @@ api's thammil olla communication nu vendi olla oru data type ahnn
                                               ottu pokum
                                    
 
-                                      steps for create redux store in react
+                                            extraReducer
                               -------------------------------------------------------
-     
+              1. promise return cheyyunna actions ine handle cheyyan ahn ith use cheyyunne
+              2. slice state ine update cheyyan different cases(actions) ine define cheyythitt ond
+              3. extraReducer nmml oru call back function ayitta kezhuthunne athinte argument ayitt nmml builder ahn kodukkunne
+              4. builder vechitt ahn nmml different cases ine handle cheyyunne ee builder inn oru predefined method ond "addCase" ith vechitt ahn cases ine handle cheyyunne
+              5. addCase(different cases) inte ullil different cases ahn kodukkande
+              6. engane nammade state ine update cheyyanam ennu ollath oro action/cases ilum nmml paranju kodukkanam
+                         eg. builder.addCase(fatchproduct.fullfilled,)
+
+
